@@ -1,12 +1,13 @@
-const { defineConfig } = require('cypress')
+import { defineConfig } from 'cypress'
 
-module.exports = defineConfig({
+export default defineConfig({
   projectId: '115iao',
   e2e: {
     setupNodeEvents(on, config) {
       name: 'chrome'
     },
-    baseUrl: 'https://factory.katanamrp.com/'
+    baseUrl: 'https://factory.katanamrp.com/',
+    specPattern: 'cypress/e2e/**/*cy.{js,ts}'
   },
   defaultCommandTimeout: 10000,
   viewportWidth: 1366,
