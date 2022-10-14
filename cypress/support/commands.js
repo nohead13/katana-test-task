@@ -35,6 +35,8 @@ Cypress.Commands.add('login', (email, password) => {
         .should('have.attr', 'placeholder', 'Your password')
         .type(testPassword, { log: false })
     cy.get('[id="1-submit"] .auth0-label-submit').should('have.text', 'Sign in').click()
+    cy.url()
+      .should('eq','https://factory.katanamrp.com/sales',{timeout: 4000})
     })    
 })
 
