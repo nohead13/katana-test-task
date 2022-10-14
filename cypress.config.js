@@ -1,7 +1,7 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  projectId: 'e18nz4',
+  projectId: '115iao',
   e2e: {
     setupNodeEvents(on, config) {
       name: 'chrome'
