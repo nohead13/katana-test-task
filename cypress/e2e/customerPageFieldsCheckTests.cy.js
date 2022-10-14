@@ -12,7 +12,7 @@ describe('Add new customer in Contacts screen', () => {
       return false;
     });
     cy.login()
-    loginPage.validateDashboardPage()()
+    loginPage.validateDashboardPage()
     cy.visit('/customer')
     })
 
