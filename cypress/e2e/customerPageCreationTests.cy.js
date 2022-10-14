@@ -50,6 +50,12 @@ describe('Add new customer in Contacts screen', () => {
     customerPage.clickOnUseBillingAddressButton()
   })
 
+  it('Delete customer in Create new customer view and check opened customer list page', () => {
+    customerPage.clickOnHeaderMenuButtonAndSelectDeleteOptionFromMenu()
+    cy.get('[data-testid="confirmDeleteButton"]').click()
+    cy.url().should('eq','https://factory.katanamrp.com/contacts/customers',{timeout: 2000})
+  })
+
 })
 
 
