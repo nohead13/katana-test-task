@@ -11,7 +11,7 @@ describe('Add new customer in Contacts screen', () => {
     Cypress.on('uncaught:exception', (err) => {
       return false;
     });
-    cy.logic()
+    cy.login()
     loginPage.validateDashboardPage()()
     cy.visit('/customer')
     })
