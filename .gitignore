@@ -1,0 +1,6 @@
+user.json
+node_modules/
+/videos
+/screenshots
+logs
+.vscode
