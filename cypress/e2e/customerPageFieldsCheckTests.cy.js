@@ -32,7 +32,7 @@ describe('Add new customer in Contacts screen', () => {
     })
 
     it('Check input display name special characters', () => {
-        customerPage.fillDisplayName('漢字 á é í ó ú ü ñ Œ ƒ ⊕')
-        customerPage.checkDisplayName('漢字 á é í ó ú ü ñ Œ ƒ ⊕')
+        customerPage.fillDisplayName('漢字 á é í ó ú ü ñ Œ ƒ ⊕ test')
+        customerPage.checkDisplayName('漢字 á é í ó ú ü ñ Œ ƒ ⊕ test')
     })
 })

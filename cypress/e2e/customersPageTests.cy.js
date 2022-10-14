@@ -16,7 +16,13 @@ describe('Customers list', () => {
       cy.login()
       loginPage.validateDashboardPage()
       dashboardPage.openAddCustomerPage()
-    }) 
+    })
+
+    after('Delete all test customers', () => {
+      cy.visit('/contacts/customers')
+      customersPage.fillNameFieldOfFilterAndSelectCheckBox('test')
+      customersPage.clickOnBulkActionMenuAndSelectDelete()
+    })
   
     it('Delete customer form the Customers list page', () => {
       customerPage.createDefaultCustomer('Bob')

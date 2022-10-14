@@ -1,11 +1,11 @@
 export class CustomersPage {
     fillNameFieldOfFilterAndSelectCheckBox(name) {
-        cy.get('[data-testid="nameFilterInput"]').type(name) 
+        cy.get('[data-testid="nameFilterInput"]').clear().type(name) 
         cy.get('[class="ag-selection-checkbox"] input[class="ag-input-field-input ag-checkbox-input"]').check()
     }
     
     clickOnBulkActionMenuAndSelectDelete() {
-        cy.get('nav button').contains('Bulk actions (1 selected) ...').click()
+        cy.get('nav button').contains('Bulk actions').click()
         cy.get('[data-testid="bulkPrintMenuItem-0-0"]').click()
         cy.get('[data-testid="confirmDeleteButton"]').click()
     }

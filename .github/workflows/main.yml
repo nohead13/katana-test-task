@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      - name: Get last changes from push
       - uses: cypress-io/github-action@v4
+      - name: Running E2E tests
         with:
           browser: chrome
           headed: true

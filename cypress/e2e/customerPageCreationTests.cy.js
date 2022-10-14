@@ -18,6 +18,12 @@ describe('Add new customer in Contacts screen', () => {
     customerPage.createDefaultCustomer()
   }) 
 
+  after('Delete all test customers', () => {
+    cy.visit('/contacts/customers')
+    customersPage.fillNameFieldOfFilterAndSelectCheckBox('test')
+    customersPage.clickOnBulkActionMenuAndSelectDelete()
+  })
+
   it('New customer with custom Display name and Comment', () => {
     customerPage.fillNumber('+3725555555')
     customerPage.fillDisplayName('King Richard [TESTUSER]')
