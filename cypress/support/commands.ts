@@ -13,25 +13,21 @@ declare namespace Cypress {
   }
 }
 
-
-
-// Have issues in version = 9.7.0, 10.0.0-10.0.3, same as issue https://github.com/cypress-io/cypress/issues/3817 
-// Missing letters when using type
-// Made workaround to solve this problem
-
+/**
+ * Have issues in version = 9.7.0, 10.0.0-10.0.3, same as issue https://github.com/cypress-io/cypress/issues/3817 
+ * Missing letters when using type
+ * Made workaround to solve this problem
+ */
 Cypress.Commands.add('textInput',(locator:string, text:string) => {
     return cy.get(locator).type('test').clear().type(text,{delay:200}).should('have.value',text)
 })
 
 Cypress.Commands.add('login', () => {
-    var testUsername, testPassword
-
     cy.fixture('users.json').as('users')
-
-    cy.get('@users').then((users) => {
+    cy.get<Cypress.ObjectLike>('@users').then((users) => {
       
-      testUsername = users.username
-      testPassword = users.password
+      var testUsername: string = users.username
+      var testPassword: string = users.password
 
     cy.visit('https://katanamrp.com/login/')
     cy.get('#1-email')

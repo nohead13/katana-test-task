@@ -1,9 +1,9 @@
-import { DashboardPage } from "../pagesObjects/DashboardPage";
 import {LoginPage} from "../pagesObjects/LoginPage";
 import { CustomerPage } from "../pagesObjects/CustomerPage";
+import { CustomersPage } from "../pagesObjects/CustomersPage";
 const loginPage = new LoginPage();
-const dashboardPage = new DashboardPage();
 const customerPage = new CustomerPage();
+const customersPage = new CustomersPage();
 
 describe('Add new customer in Contacts screen', () => {
   
@@ -15,6 +15,12 @@ describe('Add new customer in Contacts screen', () => {
     loginPage.validateDashboardPage()
     cy.visit('/customer')
     })
+
+    after('Delete all test customers', () => {
+        cy.visit('/contacts/customers')
+        customersPage.fillNameFieldOfFilterAndSelectCheckBox('test')
+        customersPage.clickOnBulkActionMenuAndSelectDelete()
+      })
 
     it('Check email formatting error for username only and an @ sign', () => {
         customerPage.fillEmail('mail@')
