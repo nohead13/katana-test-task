@@ -1,9 +1,11 @@
-import { DashboardPage } from "../pages/DashboardPage";
-import { LoginPage } from "../pages/LoginPage";
-import { CustomerPage } from "../pages/CustomerPage";
+import { DashboardPage } from "../pagesObjects/DashboardPage";
+import { LoginPage } from "../pagesObjects/LoginPage";
+import { CustomerPage } from "../pagesObjects/CustomerPage";
+import { CustomersPage } from "../pagesObjects/CustomersPage";
 const loginPage = new LoginPage();
 const dashboardPage = new DashboardPage();
 const customerPage = new CustomerPage();
+const customersPage = new CustomersPage();
 
 describe('Add new customer in Contacts screen', () => {
   
