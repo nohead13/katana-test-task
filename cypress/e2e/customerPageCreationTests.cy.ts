@@ -1,6 +1,6 @@
 import { DashboardPage } from "../pagesObjects/DashboardPage";
 import { LoginPage } from "../pagesObjects/LoginPage";
-import { CustomerPage } from "../pagesObjects/CustomerPage";
+import CustomerPage from "../pagesObjects/CustomerPage";
 import { CustomersPage } from "../pagesObjects/CustomersPage";
 const loginPage = new LoginPage();
 const dashboardPage = new DashboardPage();
@@ -10,10 +10,6 @@ const customersPage = new CustomersPage();
 describe('Add new customer in Contacts screen', () => {
   
   beforeEach('login to dashboardPage', () => {
-    Cypress.on('uncaught:exception', (err) => {
-      return false;
-    });
-  
     cy.login()
     loginPage.validateDashboardPage()
     dashboardPage.openAddCustomerPage()

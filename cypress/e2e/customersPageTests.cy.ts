@@ -10,9 +10,6 @@ const customersPage = new CustomersPage();
 describe('Customers list', () => {
 
     beforeEach('login to dashboardPage', () => {
-      Cypress.on('uncaught:exception', (err) => {
-        return false;
-      });
       cy.login()
       loginPage.validateDashboardPage()
       dashboardPage.openAddCustomerPage()

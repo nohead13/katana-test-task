@@ -1,5 +1,9 @@
-export class CustomerPage {
-    customerNaming(name,surname,company) {
+class CustomerPage {
+
+
+
+
+    inputCustomerNameAndCompany(name,surname,company) {
         cy.get('[data-testid="inputCustomerFirstName"]').type(name)
         cy.get('[data-testid="inputCustomerLastName"]').type(surname)
         cy.get('[data-testid="inputCustomerCompany"] input').type(company)
@@ -7,9 +11,9 @@ export class CustomerPage {
 
     createDefaultCustomer(customerName) {
         if (customerName == null){
-            this.customerNaming('User','Test','Test Company')
+            this.inputCustomerNameAndCompany('User','Test','Test Company')
         } else {
-            this.customerNaming(customerName,'Test','Test Company')
+            this.inputCustomerNameAndCompany(customerName,'Test','Test Company')
         }
         
         this.fillEmail('ab@c.de')
@@ -55,7 +59,7 @@ export class CustomerPage {
     }
 
     fillAddressDataAutofill() {
-        var streetName = 'Paldiski maantee';
+        const streetName = 'Paldiski maantee';
 
         cy.get('[data-testid="gridStandard"] input[name=line1]').type(streetName +' '+ '{backspace}')
         cy.contains('Paldiski maantee, Tallinn, Estonia').type('{downArrow}, {upArrow}, {enter}')
@@ -101,3 +105,6 @@ export class CustomerPage {
     }
 
 }
+
+module.exports = new CustomerPage();
+//export default CustomerPage;

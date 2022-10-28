@@ -8,9 +8,6 @@ const customersPage = new CustomersPage();
 describe('Add new customer in Contacts screen', () => {
   
   before('login to dashboardPage', ()=>{
-    Cypress.on('uncaught:exception', (err) => {
-      return false;
-    });
     cy.login()
     loginPage.validateDashboardPage()
     cy.visit('/customer')
